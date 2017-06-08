@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+        <fieldset style="width : 30%">
+            <form method="post" action="/result">
+                <label for="name">Name: </label><input type="text" name="name" value=""><br>
+                <label for="location">Location: </label><select name="location">
+                        <option value="Mountain View">Mountain View</option>
+                        <option value="Seattle">Seattle</option>
+                    </select><br>
+
+                <label for="language">Favorite Language</label><select name="language">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Python">Python</option>
+                </select>
+                <textarea name="comment" rows="5" cols="50"></textarea><br>
+                
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </fieldset>
+    </body>
+</html>
