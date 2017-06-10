@@ -1,0 +1,5 @@
+<% for(var index = 0; index < quotes.length; index++){ %>
+                <p><%= quotes[index].quote %>       <button id="<%=quotes[index]._id%>"><%=quotes[index].likes%> likes</button></p>
+                <p>-<%= quotes[index].created_by %> at <%= quotes[index].createdAt.toLocaleTimeString()%>, <%= quotes[index].createdAt.toLocaleDateString()%></p>
+                <hr>
+            <% } %>

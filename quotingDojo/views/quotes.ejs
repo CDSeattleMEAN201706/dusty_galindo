@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quotes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script>
+            $(document).ready(()=>{
+                $("#container").on("click","button", function() {
+                    $.get("/likes"+"/"+this.id, (data)=>{
+                        $("#container").html(data);
+                        console.log(data)
+                    })
+                }
+                    
+                )
+            }
+
+            )
+        
+        
+        </script>
+    </head>
+    <body>
+        <h1>Quotes</h1>
+        <div id="container">
+            <% for(var index = 0; index < quotes.length; index++){ %>
+                <p><%= quotes[index].quote %>       <button id="<%=quotes[index]._id%>"><%=quotes[index].likes%> likes</button></p>
+                <p>-<%= quotes[index].created_by %> at <%= quotes[index].createdAt.toLocaleTimeString()%>, <%= quotes[index].createdAt.toLocaleDateString()%></p>
+                <hr>
+            <% } %>
+        </div>
+    </body>
+</html>
