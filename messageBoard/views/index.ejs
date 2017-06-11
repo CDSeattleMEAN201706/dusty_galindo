@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Message Board</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Message Board</h1><hr>
+
+            <form action="/message" method="post">
+                <div class="form-group">
+                    <label for="author">Name: </label>
+                    <input type="text" class="form-control" name="author">
+                </div>
+                <div class="form-group">
+                    <label for="text">Message:</label>
+                    <textarea rows="5" cols="40" name="text" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <br>
+            <div class="messages">
+                <% for (var postIndex = 0; postIndex < posts.length; postIndex++){ %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><%= posts[postIndex].author %> at <%=posts[postIndex].createdAt.toLocaleTimeString()%> <%=posts[postIndex].createdAt.toLocaleDateString()%></div>
+                    <div class="panel-body"><%= posts[postIndex].text %><br><br><br>
+                    <% for (var commentIndex = 0; commentIndex < posts[postIndex].comments.length; commentIndex++){ %>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><%=posts[postIndex].comments[commentIndex].author%> at <%=posts[postIndex].comments[commentIndex].createdAt.toLocaleTimeString()%> <%=posts[postIndex].comments[commentIndex].createdAt.toLocaleDateString()%></div>
+                            <div class="panel-body"><%=posts[postIndex].comments[commentIndex].text%></div>
+                        </div>
+                        <% } %>
+                        <form action="/message/<%=posts[postIndex]._id%>" method="post">
+                            <div class="form-group">
+                                <label for="name">Name: </label>
+                                <input type="text" class="form-control" name="author">
+                            </div>
+                            <div class="form-group">
+                                <label for="text">Comment:</label>
+                                <textarea rows="5" cols="40" name="text" class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        
+                    </div>
+                </div> 
+                <% } %>
+            </div>
+            
+
+        </div>
+
+    </body>
+</html> 
