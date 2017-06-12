@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 var Animal = mongoose.model("Animal")
-var ObjectId = require('mongodb').ObjectID
+// var ObjectId = require('mongodb').ObjectID
 
 module.exports = {
     getAllanimals: (request, response)=>{
@@ -57,7 +57,7 @@ module.exports = {
 
     // POST '/mongooses/destroy/:id' Should delete the mongoose from the database by ID.
     deleteAnimal: (request, response)=>{
-        Animal.remove({_id: ObjectId(request.params.id)},(error, result)=>{
+        Animal.remove({_id: request.params.id},(error, result)=>{
 
                 response.redirect("/")
         })
@@ -66,7 +66,7 @@ module.exports = {
         if(request.params.id == "new"){
             response.render("new", {animal: [{}], action: ["/animals"]})
         }else{
-            Animal.find({_id: ObjectId(request.params.id)}, (err, res)=>{
+            Animal.find({_id: request.params.id}, (err, res)=>{
                 if (err){
                     response.redirect("/")
                 }else{
