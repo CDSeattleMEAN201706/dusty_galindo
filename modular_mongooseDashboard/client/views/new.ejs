@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <form action="<%= action[0]%>", method="post">
+
+                <div class="form-group">
+                    <label for="name">Animal's Name: </label>
+                    <input type="text" class="form-control" name="name" value="<%= animal[0].name%>">
+                </div>
+                <div class="form-group">
+                    <label for="common_name">Common Name: </label>
+                    <input type="text" class="form-control" name="common_name" value="<%= animal[0].common_name%>">
+                </div>
+                <div class="form-group">
+                    <label for="scientific_name">Scientific Name: </label>
+                    <input type="text" class="form-control" name="scientific_name" value="<%= animal[0].scientific_name%>">
+                </div>
+                <div class="form-group">
+                    <label for="image_url">Link to image: </label>
+                    <input type="text" class="form-control" name="image_url" value="<%= animal[0].image_url%>">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description: </label>
+                    <textarea rows="5" cols="50" name="description" ><%= animal[0].description%></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <a href="/"><button>Back</button></a>
+        </div>
+    </body>
+</html>

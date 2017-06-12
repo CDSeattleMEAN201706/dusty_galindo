@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Animals</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+        <style>.inline{
+            display: inline;
+        }</style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <a href="/"><h1>Animals at Woodland Park Zoo</h1></a>
+            <% for(var index = 0; index < animals.length; index++){ %>
+                <div class="media">
+                    <div class="media-left">
+                        <img src="<%= animals[index].image_url %>" class="media-object" style="width:75px">
+                    </div>
+                    <div class="media-body">
+                        <a href="/animals/<%= animals[index]._id %>"><h4 class="media-heading"><%= animals[index].name %></h4></a>
+                        <h5><%= animals[index].common_name%> (<%= animals[index].scientific_name%>)</h5>
+
+                        <p><%= animals[index].description %></p>
+                        
+                        <a href = "/animals/edit/<%= animals[index]._id %>"><button class="inline">	<span class="glyphicon glyphicon-pencil"></span> edit</button></a>
+                        <form class="inline" action="/animals/delete/<%=animals[index]._id%>" method="post"><button ><span class="glyphicon glyphicon-trash"></span> delete</button></form>
+                    </div>
+                </div>
+                <hr>
+            <% } %>
+            <a href="/animals/new"><button>Add new animal</button></a>
+        </div>
+        
+    </body>
+</html>
