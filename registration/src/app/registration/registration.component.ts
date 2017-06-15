@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
   onSubmit(formData){
     if(formData.valid){
       console.log("valid form")
-      
+      console.log(this.user1)
       this.user1 = formData.form.value
       console.log(this.user1.luck)
       if (this.user1.password != this.user1.password_confirmation){

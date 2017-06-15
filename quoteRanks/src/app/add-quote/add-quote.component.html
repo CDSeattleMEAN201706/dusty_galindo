@@ -1,0 +1,7 @@
+<h1>Add a Quote</h1>
+<form #formData = "ngForm">
+  <textarea rows="5" cols="50"   name="text" name="text" [(ngModel)] = "quote.text" required #text = "ngModel"></textarea><span *ngIf = "text.errors">{{text.errors|json}}</span><br>
+  Author: <input type="text" name="author" value="" [(ngModel)] = "quote.author" required #author = "ngModel">
+  <button type="button" (click)="submitQuote(formData)">Add Quote</button><span *ngIf = "author.errors">{{author.errors|json}}</span>
+</form>
+<p>{{quote|json}}</p>

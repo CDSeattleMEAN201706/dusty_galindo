@@ -1,0 +1,17 @@
+h2{
+  display: inline-block;
+}
+.buttons{
+  display: inline-block;
+
+}
+.buttons button{
+  display: block;
+
+}
+.text{
+  display: inline-block
+}
+.quote-container{
+  border: 1px solid black;
+}
