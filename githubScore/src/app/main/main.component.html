@@ -1,0 +1,14 @@
+<div class="submit">
+  <h1>GitHub Score</h1>
+  <form>
+    <input type="text" name="user-name" value="" [(ngModel)] = "userName">
+    <button type="button" (click)="submitPressed()">Submit</button>
+  </form>
+</div>
+<div class="results">
+  <p *ngIf="score">Score: {{score}}</p>
+  <img *ngIf="img_url" src="{{img_url}}">
+</div>
+<div *ngIf="error" class="results">
+  <p>User does not exist</p>
+</div>

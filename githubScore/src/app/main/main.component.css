@@ -1,0 +1,6 @@
+img{
+  width: 75px;
+}
+.submit, .results{
+  display: inline-block;
+}
