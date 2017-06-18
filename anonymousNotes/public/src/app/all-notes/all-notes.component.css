@@ -1,0 +1,13 @@
+#notesContainer, .note{
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+}
+.time{
+  text-align: right;
+}
+#notesContainer{
+  overflow: scroll;
+  height: 500px;
+}

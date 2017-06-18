@@ -1,0 +1,10 @@
+<div>
+  <h2>Edit Product</h2>
+  <form #formData = "ngForm">
+    Title: <input type="text" name="title" value="" required [(ngModel)] = "form.title" #title = "ngModel"><br>
+    Price: <input type="number" name="price" value="" required [(ngModel)] = "form.price" #price = "ngModel"><br>
+    Image Url: <input type="string" name="img_url" value="" [(ngModel)] = "form.img_url" #imgUrl = "ngModel"><br>
+    <a [routerLink] = "['/products']" ><button type="button" [disabled] = "!formData.valid" (click)="addProduct(formData)"><span *ngIf="update">Update</span><span *ngIf="!update">Add</span></button></a>
+    
+  </form>
+</div>

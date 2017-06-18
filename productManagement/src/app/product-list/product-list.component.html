@@ -1,0 +1,12 @@
+<div class="products">
+  <h2>Products List</h2>
+  <div class="product" *ngFor='let product of products; let i = index'>
+    <img *ngIf="product.img_url" src="{{product.img_url}}">
+    <img *ngIf="!product.img_url" src="http://www.nokiafirmware.net/img/nokia/Image-Not-Found.png">
+    <h4>{{product.title}}</h4>
+    <h6>{{product.price|currency:"USD":true}}</h6>
+
+    <a [routerLink] = "['/new', i]"><button type="button">Edit</button></a>
+    <button type="button" (click)="deleteProduct(i)">Delete</button>
+  </div>
+</div>
