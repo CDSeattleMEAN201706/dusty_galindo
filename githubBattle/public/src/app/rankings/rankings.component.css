@@ -1,0 +1,10 @@
+img{
+  width: 100px;
+}
+.inlineBlock{
+  display: inline-block;
+  vertical-align: top;
+}
+.player{
+  border-bottom: 1px solid black;
+}

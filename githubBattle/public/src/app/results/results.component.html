@@ -1,0 +1,17 @@
+<div>
+  <div class="inlineBlock">
+    <div class="winner">
+      <h1>1st Place</h1>
+      <h3>{{players[winner].username}} (Score: {{players[winner].score}})</h3>
+    </div>
+    <div class="loser">
+      <h1>2nd Place</h1>
+      <h3>{{players[players.length - winner - 1].username}} (Score: {{players[players.length - winner - 1].score}})</h3>
+    </div>
+  </div>
+  <div class="inlineBlock">
+    <img src="{{players[winner].img_url}}" alt="winner">
+    <p>{{players[winner].username}}</p>
+  </div>
+</div>
+<button type="button" [routerLink]="['/']">Reset</button>

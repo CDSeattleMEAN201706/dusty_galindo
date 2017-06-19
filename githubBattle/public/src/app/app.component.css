@@ -1,0 +1,14 @@
+*{
+  margin: 5px;
+  padding: 5px; 
+}
+.inlineBlock{
+  display: inline-block;
+}
+.rightBorder{
+  border-right: 1px solid black;
+  padding-right: 15px;
+}
+.nav{
+  float: right;
+}

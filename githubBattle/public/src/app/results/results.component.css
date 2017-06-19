@@ -1,0 +1,13 @@
+.winner{
+  color: green;
+}
+.loser{
+  color: red;
+}
+.inlineBlock{
+  display: inline-block;
+  width: 30%;
+}
+img{
+  width: 300px;
+}
