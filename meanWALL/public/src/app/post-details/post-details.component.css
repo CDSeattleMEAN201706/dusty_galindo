@@ -1,0 +1,14 @@
+.message{
+  border: 1px solid black;
+}
+.postForm{
+  padding: 15px;
+  border: 1px dotted black;
+}
+.comment{
+  font-size: small;
+  border: 1px solid green;
+}
+h6{
+  text-align: right;
+}

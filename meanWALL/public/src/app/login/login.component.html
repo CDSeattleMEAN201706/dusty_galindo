@@ -1,0 +1,2 @@
+<p>Enter a username to continue:</p>
+<form (submit)="login(formData)" #formData = "ngForm"><input type="text" name="username" value="" [(ngModel)] = "user.username" required #username = "ngModel" minlength="3"><span *ngIf="username.value"><span *ngIf="username.errors">Min length is 3</span></span> <button [disabled]="!formData.valid" type="submit">Enter</button></form>

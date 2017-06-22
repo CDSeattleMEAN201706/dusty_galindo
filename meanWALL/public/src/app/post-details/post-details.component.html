@@ -1,0 +1,15 @@
+<div class="message">
+<h5>{{message?._user.username}} at {{message?.createdAt | date: "medium"}}</h5>
+    <p>{{message?.text}}</p>
+    <div class="comment" *ngFor="let comment of message._comments">
+     <h5>{{comment._user.username}} at {{comment.createdAt | date: "medium"}}</h5> 
+      <p>{{comment.text}}</p>
+    </div>
+  <div class="postForm">
+    <form (submit)="submitComment()" #formData = "ngForm">
+      <p>Post a comment:</p>
+      <textarea rows="3" cols="30" name="text" [(ngModel)]="comment.text" required></textarea>
+      <button [disabled]="!formData.valid">Post Comment</button>
+    </form>
+  </div>
+</div>
